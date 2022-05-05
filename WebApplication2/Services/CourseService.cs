@@ -36,7 +36,9 @@ namespace WebApplication2.Services
             var result = await context.Courses.FirstOrDefaultAsync(x => x.Id == item.Id);
             if (result != null)
             {
-                context.Courses.Update(item);
+                result.Name = item.Name;
+                result.Description = item.Description;
+                result.Credits = item.Credits;
                 await context.SaveChangesAsync();
 
             }
