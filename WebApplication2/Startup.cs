@@ -30,6 +30,9 @@ namespace WebApplication2
             services.AddDbContext<SchoolSystemDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DBConnection")));
             services.AddControllers();
             services.AddTransient<CourseService>();
+            services.AddTransient<StudentService>();
+            services.AddTransient<StudentInformationService>();
+            services.AddTransient<TeacherService>();
 
 
 
